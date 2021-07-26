@@ -12,7 +12,8 @@ class Blog extends Component {
         post_id: null
     }
     componentDidMount(){
-        axios.get('https://jsonplaceholder.typicode.com/posts').then(response =>{
+        axios.get('/posts')
+        .then(response =>{
             const posts = response.data.slice(0,4);
             const updatePosts = posts.map(post => {
                 return {
@@ -21,6 +22,9 @@ class Blog extends Component {
                 }
             })
            this.setState({posts: updatePosts});
+        })
+        .catch(error => {
+            console.log(error);
         })
     }
     postClickedHandler = (id) => {
