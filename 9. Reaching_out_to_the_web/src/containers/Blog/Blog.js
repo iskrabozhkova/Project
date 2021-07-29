@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
-import Post from '../../components/Post/Post';
-import FullPost from '../../components/FullPost/FullPost';
-import NewPost from '../../components/NewPost/NewPost';
+//import Post from '../../components/Post/Post';
+// import FullPost from './FullPost/FullPost';
+// import NewPost from './NewPost/NewPost';
 import axios from 'axios'
 import './Blog.css';
 
@@ -39,6 +38,14 @@ class Blog extends Component {
         })
         return (
             <div>
+                <header>
+                    <nav className="NavBar">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/new-post">New Post</a></li>
+                        </ul>
+                    </nav>
+                </header>
                 <section className="Posts">
                    {posts}
                 </section>
